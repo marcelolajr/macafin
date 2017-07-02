@@ -2,8 +2,11 @@
     does nothing
 """
 import flask
-app = flask.Flask(__name__) # pylint: disable=invalid-name
-app.config["CACHE_TYPE"] = "null"
+import config
+app = flask.Flask(__name__)  # pylint: disable=invalid-name
+app.config.from_object(config.Development)
+# app.config.from_object(config.Production)
+
 
 @app.route('/')
 def index():
