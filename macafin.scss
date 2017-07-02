@@ -1,44 +1,55 @@
+$colors: #F2385A, #F5A503, #E9F1DF, #56D9CD, #3AA1BF;
+$max: length($colors);
+$dash: 70;
+$dash-gap: 10;
+$dash-space: $dash * ($max - 1) + $dash-gap * $max;
+$time: 6s;
+$time-step: $time/$max;
 
+/* Main styles */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
 
-HTML, BODY {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  background-color: #222a2b;
-  min-height: 100%;
-  background: hsl(200,70,11);
-  background-size: .12em 100%;
-  font: 16em/1 Arial;
-}
-
-$colors: #360745, #D61C59, #E7D84B, #EFEAC5, #1B8798;
-
-.text--line {
-  font-size: .5em;
-  }
-
-$max: 5;
-$stroke-step: 7%; 
-.text-copy {
+.text {
   fill: none;
-  stroke: white;
-  stroke-dasharray: $stroke-step $stroke-step * ($max - 1);
-  stroke-width: 3px;
-  
-  animation: stroke-offset 9s infinite linear;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-dasharray: $dash $dash-space;
+  stroke-dashoffset: 0;
+  -webkit-animation: stroke $time infinite linear;
+  animation: stroke $time infinite linear;
   
   @for $item from 1 through $max {
-    $stroke-color: nth($colors, $item);
-    
-    &:nth-child(#{$item}) {
-      stroke: $stroke-color;
-      stroke-dashoffset: $stroke-step * $item;
+    &:nth-child(#{$max}n + #{$item}) {
+      $color: nth($colors, $item);
+      stroke: $color;
+      -webkit-animation-delay: -($time-step * $item);
+      animation-delay: -($time-step * $item);
     }
   }
 }
 
-@keyframes stroke-offset {
-  50% {
-    stroke-dashoffset: $stroke-step * $max;  
-    stroke-dasharray: 0 $stroke-step * $max*2.5;
+@-webkit-keyframes stroke {
+  100% {
+    stroke-dashoffset: -($dash + $dash-gap) * $max;
   }
 }
 
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: -($dash + $dash-gap) * $max;
+  }
+}
+
+/* Other styles */
+html, body {
+  height: 100%;
+  background: hsl(200,70,11);
+  min-height: 100%;
+}
+
+
+// svg {
+//   //position: absolute;
+//   width: 100%;
+//   height: 100%;
+// }

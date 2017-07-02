@@ -1,39 +1,44 @@
-HTML, BODY {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  background-color: #222a2b;
-  min-height: 100%;
-  background: #082330;
-  background-size: .12em 100%;
-  font: 16em/1 Arial; }
-
-.text--line {
-  font-size: .5em; }
-
-.text-copy {
+/* Main styles */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
+.text {
   fill: none;
-  stroke: white;
-  stroke-dasharray: 7% 28%;
-  stroke-width: 3px;
-  animation: stroke-offset 9s infinite linear; }
-  .text-copy:nth-child(1) {
-    stroke: #360745;
-    stroke-dashoffset: 7%; }
-  .text-copy:nth-child(2) {
-    stroke: #D61C59;
-    stroke-dashoffset: 14%; }
-  .text-copy:nth-child(3) {
-    stroke: #E7D84B;
-    stroke-dashoffset: 21%; }
-  .text-copy:nth-child(4) {
-    stroke: #EFEAC5;
-    stroke-dashoffset: 28%; }
-  .text-copy:nth-child(5) {
-    stroke: #1B8798;
-    stroke-dashoffset: 35%; }
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-dasharray: 70 330;
+  stroke-dashoffset: 0;
+  -webkit-animation: stroke 6s infinite linear;
+  animation: stroke 6s infinite linear; }
+  .text:nth-child(5n + 1) {
+    stroke: #F2385A;
+    -webkit-animation-delay: -1.2s;
+    animation-delay: -1.2s; }
+  .text:nth-child(5n + 2) {
+    stroke: #F5A503;
+    -webkit-animation-delay: -2.4s;
+    animation-delay: -2.4s; }
+  .text:nth-child(5n + 3) {
+    stroke: #E9F1DF;
+    -webkit-animation-delay: -3.6s;
+    animation-delay: -3.6s; }
+  .text:nth-child(5n + 4) {
+    stroke: #56D9CD;
+    -webkit-animation-delay: -4.8s;
+    animation-delay: -4.8s; }
+  .text:nth-child(5n + 5) {
+    stroke: #3AA1BF;
+    -webkit-animation-delay: -6s;
+    animation-delay: -6s; }
 
-@keyframes stroke-offset {
-  50% {
-    stroke-dashoffset: 35%;
-    stroke-dasharray: 0 87.5%; } }
+@-webkit-keyframes stroke {
+  100% {
+    stroke-dashoffset: -400; } }
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: -400; } }
+/* Other styles */
+html, body {
+  height: 100%;
+  background: #082330;
+  min-height: 100%; }
 
 /*# sourceMappingURL=macafin.css.map */
