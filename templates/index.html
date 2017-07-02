@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>macafin</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.1.0/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/macafin.css') }}">
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="columns">
+          <div class="column">
+            <svg>
+              <symbol id="s-text">
+                <text text-anchor="middle" x="50%" y="35%" class="text--line">
+                  Macafin 
+                </text>
+              </symbol>
+              <g class="g-ants">
+                <use xlink:href="#s-text" class="text-copy"></use>     
+                <use xlink:href="#s-text" class="text-copy"></use>     
+                <use xlink:href="#s-text" class="text-copy"></use>     
+                <use xlink:href="#s-text" class="text-copy"></use>     
+                <use xlink:href="#s-text" class="text-copy"></use>     
+              </g>
+            </svg>
+            <div class="columns is-mobile">
+              <div class="column">
+                First nested column
+              </div>
+              <div class="column">
+                Second nested column
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
