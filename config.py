@@ -1,6 +1,7 @@
 """
     Configuration enviroments
 """
+from os.path import expanduser
 
 
 class Development():
@@ -36,6 +37,10 @@ class Development():
     # SONIFY_MIMETYPE = None
     TEMPLATES_AUTO_RELOAD = True
     # EXPLAIN_TEMPLATE_LOADING = None
+    REPORTS_FOLDER = expanduser('~') + '/Macafin'
+
+    def __init__(self):
+        pass
 
 
 class Production():
@@ -71,3 +76,7 @@ class Production():
     # SONIFY_MIMETYPE = None
     TEMPLATES_AUTO_RELOAD = True
     # EXPLAIN_TEMPLATE_LOADING = None
+    REPORTS_FOLDER = expanduser('~') + '/Macafin'
+
+    def __init__(self):
+        pass
