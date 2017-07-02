@@ -17,6 +17,11 @@
 
 ## History
     * 07-1-2017 - initial setup
+    * 07-2-2017 - adding CONTRIBUTING, LICENSE AND README
+                - adding views and styles
+                - adding environment configuration support
+                - adding report download
+                - minor fixes and setups
 
 ## Credits
     Goes to Guido Van Rossum for remembering Monty even though I'm not that old
