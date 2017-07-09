@@ -37,7 +37,12 @@ class Development():
     # SONIFY_MIMETYPE = None
     TEMPLATES_AUTO_RELOAD = True
     # EXPLAIN_TEMPLATE_LOADING = None
-    REPORTS_FOLDER = expanduser('~') + '/Macafin'
+    U_REPORTS_FOLDER = expanduser('~') + '/Macafin'
+    # this needs to be merged
+    U_DATA_FOLDER = expanduser('~') + '/Macafin/Data'
+    W_REPORTS_FOLDER = expanduser('~') + '\\Macafin'
+    # this needs to be merged
+    W_DATA_FOLDER = expanduser('~') + '\\Macafin\\Data'
 
     def __init__(self):
         pass
@@ -76,7 +81,12 @@ class Production():
     # SONIFY_MIMETYPE = None
     TEMPLATES_AUTO_RELOAD = True
     # EXPLAIN_TEMPLATE_LOADING = None
-    REPORTS_FOLDER = expanduser('~') + '/Macafin'
+    U_REPORTS_FOLDER = expanduser('~') + '/Macafin'
+    # this needs to be merged
+    U_DATA_FOLDER = expanduser('~') + '/Macafin/Data'
+    W_REPORTS_FOLDER = expanduser('~') + '\\Macafin'
+    # this needs to be merged
+    W_DATA_FOLDER = expanduser('~') + '\\Macafin\\Data'
 
     def __init__(self):
         pass
