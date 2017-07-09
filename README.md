@@ -22,6 +22,8 @@
                 - adding environment configuration support
                 - adding report download
                 - minor fixes and setups
+    * 07-9-2017 - adding basic report generation
+                - minor fixes and setups
 
 ## Credits
     Goes to Guido Van Rossum for remembering Monty even though I'm not that old
