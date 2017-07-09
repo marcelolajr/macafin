@@ -1,10 +1,10 @@
 """
     does nothing
 """
-from __future__ import print_function  # In python 2.7
 import sys
 import flask
 import config
+from cash_basis import cash_basis_generation
 app = flask.Flask(__name__)  # pylint: disable=invalid-name
 app.config.from_object(config.Development)
 # app.config.from_object(config.Production)
@@ -28,15 +28,11 @@ def report():
     # there's a couple more values, but I don't know why
 
     # here you should do something like
-    # report_ = report_generation(toDate(params['start'], toDate(params['start']))
+    report_ = cash_basis_generation(params['start'], params['end'], app)
     # report_ should be the report name as a string
-    report_ = ''  # remove this line when you have the previous working
 
     # this next line would cause it to be downloaded automagically
-    return flask.send_from_directory(
-        app.config['REPORTS_FOLDER'],
-        report_,
-        as_attachment=True)
+    return report_
 
 
 @app.errorhandler(404)
