@@ -1,7 +1,6 @@
 """
     does nothing
 """
-import sys
 import flask
 import config
 from cash_basis import cash_basis_generation
@@ -28,16 +27,16 @@ def report():
     # there's a couple more values, but I don't know why
 
     # here you should do something like
-    report_ = cash_basis_generation(params['start'], params['end'], app)
+    report_ = cash_basis_generation(params['start'], params['end'],app)
+        
     # report_ should be the report name as a string
 
     # this next line would cause it to be downloaded automagically
-    return report_
-
+    return flask.render_template('cash_basis.html',object=report_)
 
 @app.errorhandler(404)
 def page_not_found(error):
     """
         Error view handler
     """
-    return flask.render_template('404.html', error=error), 404
+    return flask.render_template('404.html', error=error)

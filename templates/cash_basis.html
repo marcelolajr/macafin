@@ -1,0 +1,22 @@
+<title>Cash basis</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<div class="time">
+<h1> Período </h1>
+<h2> Inicial: {{ object.start }} Final: {{ object.finish }} </h2>
+</div>
+<div class="report1">
+<h1> Total Apurado </h1>
+<h3>{{object.total_profit}}</h3>
+</div>
+<div class="report2">
+<h1> Total por Categoria </h1>
+{{object.category_piece|safe}}
+</div>
+<div class="report3">
+<h1> Total de Receita e Débito </h1>
+{{object.receipt_debt|safe}}
+</div>
+<div class="report4">
+<h1> Geral </h1>
+{{object.general_report|safe}}
+</div>
