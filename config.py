@@ -1,12 +1,20 @@
+# -*- coding: utf-8 -*-
 """
-    Configuration enviroments
+    ----------
+    Macafin configuration file
+    ----------
+
+    This module specifies configuration classes for each application environment.
+
+    :copyright: (c) 2017 by Aguiar, Vitoriano.
+    :license: GNU GPL 3, see LICENSE for more details.
 """
 from os.path import expanduser
 
 
 class Development():
     """
-        Configuration used for development status
+        Development configuration
     """
 
     DEBUG = True
@@ -39,13 +47,14 @@ class Development():
     # EXPLAIN_TEMPLATE_LOADING = None
     REPORTS_FOLDER = expanduser('~') + '\\Macafin'
     DATA_FOLDER = expanduser('~') + '\\Macafin\\Data'
+
     def __init__(self):
         pass
 
 
 class Production():
     """
-        Configuration used for production status
+        Production configuration
     """
 
     DEBUG = True
@@ -78,5 +87,6 @@ class Production():
     # EXPLAIN_TEMPLATE_LOADING = None
     REPORTS_FOLDER = expanduser('~') + '\Macafin'
     DATA_FOLDER = expanduser('~') + '\Macafin\Data'
+
     def __init__(self):
         pass
