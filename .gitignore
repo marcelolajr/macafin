@@ -21,3 +21,6 @@ htmlcov
 # Sass
 .sass-cache/
 *.css.map
+
+# VS Code
+.vscode/*
