@@ -88,8 +88,12 @@ def general_report_generation(financeira_df):
     """
         TODO:
     """
-    relatorio_geral = financeira_df[[
-        'Data', 'Categoria', 'Beneficiário', 'Detalhes', 'Vencimento', 'ValorNum']]
+    relatorio_geral = financeira_df[['Data',
+                                     'Categoria',
+                                     'Beneficiário',
+                                     'Detalhes',
+                                     'Vencimento',
+                                     'ValorNum']]
     relatorio_geral = relatorio_geral.sort_values('Data', ascending=True)
     relatorio_geral = relatorio_geral.style.applymap(
         color_negative_red, subset=['ValorNum'])
@@ -140,12 +144,14 @@ def cash_basis_generation(start, finish, app):
         financeira_df['ValorNum'], errors='coerce')
     financeira_df['Data'] = pd.to_datetime(
         financeira_df['Data'], format='%d/%m/%Y', errors='coerce')
-    financeira_df['Beneficiário'] = financeira_df['Beneficiário'].replace(np.nan, '', regex=True)        
-    financeira_df['Detalhes'] = financeira_df['Detalhes'].replace(np.nan, '', regex=True)
+    financeira_df['Beneficiário'] = financeira_df['Beneficiário'].replace(
+        np.nan, '', regex=True)
+    financeira_df['Detalhes'] = financeira_df['Detalhes'].replace(
+        np.nan, '', regex=True)
 
     if (start is not None and finish is not None):
-        financeira_df = financeira_df[(financeira_df.Data != '') & (financeira_df.Data >= datetime.datetime.strptime(start, "%d/%m/%Y").date())
-                                      & (financeira_df.Data <= datetime.datetime.strptime(finish, "%d/%m/%Y").date())]
+        financeira_df = financeira_df[(financeira_df.Data != '') & (financeira_df.Data >= datetime.datetime.strptime(
+            start, "%d/%m/%Y").date()) & (financeira_df.Data <= datetime.datetime.strptime(finish, "%d/%m/%Y").date())]
 
     return {
         "category_piece": category_piece_generation(financeira_df),

@@ -224,3 +224,8 @@ _:-ms-input-placeholder,
     margin-bottom: 40px;
     z-index: 900;
 }
+.demo-card-image.mdl-card {
+    height: 600px;
+    background: url('../img/error/raging_code_monkey_404.png');
+    background-repeat: no-repeat;
+}
