@@ -28,7 +28,7 @@ TODO:
 Please, refer to CONTRIBUTING file.
 
 ## History
-Please, refer to HISTORY file.
+TODO:
 
 ## Credits
 Goes to Guido Van Rossum for remembering Monty even though I'm not that old
