@@ -28,7 +28,7 @@ TODO:
 Por favor, vide o arquivo CONTRIBUTING.
 
 ## History
-Por favor, vide o arquivo HISTORY.
+TODO:
 
 ## Credits
 Vai para Guido Van Rossum por lembrar de Monty apesar de não sermos assim tão velhos e Python por ser 'do caralho'. Gratificações para a comunidade do Flask e aos devs de Vuetify,Pandas e NumPy. E não esquecamos dos PEPS. Todos precisamos de PEPS.

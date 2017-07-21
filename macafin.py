@@ -17,19 +17,11 @@ app.config.from_object(config.Development)
 
 
 @app.route('/', methods=['GET'])
-def index():
+def dashboard():
     """
         Index view handler
     """
-    return flask.render_template('index.html')
-
-
-@app.route('/dashboard', methods=['GET'])
-def dashboard():
-    """
-        Dashboard view handler
-    """
-    return flask.render_template('dashboard.html')
+    return flask.render_template('dashboard.html', title='Dashboard')
 
 
 @app.route('/report', methods=['GET'])
@@ -37,7 +29,7 @@ def report():
     """
         Report view handler
     """
-    return flask.render_template('report.html')
+    return flask.render_template('report.html', title='Report')
 
 
 @app.route('/report_generation', methods=['POST'])
@@ -55,7 +47,7 @@ def settings():
     """
         Settings view handler
     """
-    return flask.render_template('settings.html')
+    return flask.render_template('settings.html', title='Settings')
 
 
 @app.route('/about', methods=['GET'])
@@ -63,7 +55,7 @@ def about():
     """
         About view handler
     """
-    return flask.render_template('about.html')
+    return flask.render_template('about.html', title='About')
 
 
 @app.route('/legal_information', methods=['GET'])
@@ -71,7 +63,7 @@ def legal_information():
     """
         Legal information generation handler
     """
-    return flask.render_template('legal_information.html')
+    return flask.render_template('legal_information.html', title='Legal Information')
 
 
 @app.errorhandler(404)
