@@ -63,7 +63,8 @@ def legal_information():
     """
         Legal information generation handler
     """
-    return flask.render_template('legal_information.html', title='Legal Information')
+    return flask.render_template(
+        'legal_information.html', title='Legal Information')
 
 
 @app.errorhandler(404)
