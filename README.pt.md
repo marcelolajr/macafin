@@ -1,13 +1,13 @@
 # macafin
 é uma aplicação voltada para geração dinâmica de relatórios financeiros com foco em simplicidade e praticidade.  
 
-## Dependecies
+## Dependêcias
 * Flask
 * Material Design Lite
 * Pandas e Numpy
 * por enquanto
 
-## Installation
+## Instalação
 fácil, fácil:
 1. Clone o projeto!
 2. Instale [pip](https://pip.pypa.io/en/stable/installing/) 
@@ -18,20 +18,20 @@ fácil, fácil:
 5. flask run
 6. Voilá ;-)
 
-## Usage
+## Uso
 TODO:
 
-## Known Issues
+## Problemas conhecidos
 TODO:
 
-## Contributing
+## Contribuindo
 Por favor, vide o arquivo CONTRIBUTING.
 
-## History
+## História
 TODO:
 
-## Credits
-Vai para Guido Van Rossum por lembrar de Monty apesar de não sermos assim tão velhos e Python por ser 'do caralho'. Gratificações para a comunidade do Flask e aos devs de Vuetify,Pandas e NumPy. E não esquecamos dos PEPS. Todos precisamos de PEPS.
+## Créditos
+Vai para Guido Van Rossum por lembrar de Monty apesar de não sermos assim tão velhos e Python por ser 'do caralho'. Gratificações para a comunidade do Flask e aos devs de Material Design Lite,Pandas e NumPy. E não esquecamos dos PEPS. Todos precisamos de PEPS.
 
 * [Python](https://www.python.org/)
 * [Flask](http://flask.pocoo.org/)
@@ -40,6 +40,6 @@ Vai para Guido Van Rossum por lembrar de Monty apesar de não sermos assim tão 
 * [NumPy](http://www.numpy.org/)
 * Cresce conforme o desenvolvimento!
 
-## License
-    macafin é licenciado sob a licença GNU GPL 3 license. Por favor, vide o arquivo LICENSE.
+## Licensa
+macafin é licenciado sob a licença GNU GPL 3 license. Por favor, vide o arquivo LICENSE.
     

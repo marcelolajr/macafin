@@ -32,7 +32,7 @@ TODO:
 
 ## Credits
 Goes to Guido Van Rossum for remembering Monty even though I'm not that old
-and Python for being awesome. Props to Flask team too! Do not forget the PEPs! We all need PEPs. And to whoever made them.
+and Python for being awesome. Props to Flask community and Material Design Lite devs! And do not forget the PEPs! We all need PEPs.
 
 * [Python](https://www.python.org/)
 * [Flask](http://flask.pocoo.org/)
