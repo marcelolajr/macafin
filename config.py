@@ -9,7 +9,7 @@
     :copyright: (c) 2017 by Aguiar, Vitoriano.
     :license: GNU GPL 3, see LICENSE for more details.
 """
-from os.path import expanduser
+from os.path import expanduser, sep
 
 
 class Development():
@@ -45,8 +45,8 @@ class Development():
     # SONIFY_MIMETYPE = None
     TEMPLATES_AUTO_RELOAD = True
     # EXPLAIN_TEMPLATE_LOADING = None
-    REPORTS_FOLDER = expanduser('~') + '\\Macafin'
-    DATA_FOLDER = expanduser('~') + '\\Macafin\\Data'
+    REPORTS_FOLDER = expanduser('~') + sep + 'Macafin' + sep
+    DATA_FOLDER = expanduser('~') + sep + 'Macafin' + sep + 'Data' + sep
 
     def __init__(self):
         pass

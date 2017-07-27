@@ -126,7 +126,6 @@ def cash_basis_generation(start, finish, app):
     for file_ in allFiles:
         df = pd.read_csv(
             app.config['DATA_FOLDER'] +
-            '\\' +
             file_,
             index_col=None,
             header=0)
