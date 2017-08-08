@@ -15,17 +15,6 @@ import locale
 from os import listdir
 import datetime
 
-
-def color_negative_red(val):
-    """
-        Takes a scalar and returns a string with
-        the css property `'color: red'` for negative
-        strings, black otherwise.
-    """
-    color = 'red' if val < 0 else 'black'
-    return 'color: %s' % color
-
-
 def formata_real(val):
     """
         TODO:
@@ -42,10 +31,8 @@ def category_piece_generation(financeira_df):
     """
     categoria_df = financeira_df.groupby(['Categoria']).agg(
         {'ValorNum': sum}).apply(lambda x: x.sort_values(ascending=False))
-    categoria_df.rename(columns={'ValorNum': 'Total'}, inplace=True)
-    categoria_df_style = categoria_df.style.applymap(
-        color_negative_red).format({"Total": lambda x: formata_real(x)})
-    return categoria_df_style
+    categoria_df['Total'] = categoria_df['ValorNum'].map(lambda x: formata_real(x))
+    return categoria_df
 
 
 def classify_securities(row):
@@ -80,8 +67,8 @@ def receipt_debt_generation(financeira_df):
         ['Recebido', 'Classificação']).agg({'ValorNum': sum})
     receita_despesa = receita_despesa.apply(
         lambda x: x.sort_values(ascending=False))
-    return receita_despesa.style.applymap(color_negative_red).format(
-        {"ValorNum": lambda x: formata_real(x)})
+    receita_despesa['Total'] = receita_despesa['ValorNum'].map(lambda x: formata_real(x))
+    return receita_despesa
 
 
 def general_report_generation(financeira_df):
@@ -95,12 +82,7 @@ def general_report_generation(financeira_df):
                                      'Vencimento',
                                      'ValorNum']]
     relatorio_geral = relatorio_geral.sort_values('Data', ascending=True)
-    relatorio_geral = relatorio_geral.style.applymap(
-        color_negative_red, subset=['ValorNum'])
-    relatorio_geral = relatorio_geral.format(
-        {"ValorNum": lambda x: formata_real(x)})
-    relatorio_geral = relatorio_geral.format(
-        {"Data": lambda x: datetime.datetime.strftime(x, '%d/%m/%Y') if (x != '') else 'Pendente'})
+    relatorio_geral['Total'] = relatorio_geral['ValorNum'].map(lambda x: formata_real(x))
     return relatorio_geral
 
 
