@@ -45,7 +45,7 @@ def category_piece_generation(financeira_df):
     categoria_df.rename(columns={'ValorNum': 'Total'}, inplace=True)
     categoria_df_style = categoria_df.style.applymap(
         color_negative_red).format({"Total": lambda x: formata_real(x)})
-    return categoria_df_style.render()
+    return categoria_df_style
 
 
 def classify_securities(row):
@@ -81,7 +81,7 @@ def receipt_debt_generation(financeira_df):
     receita_despesa = receita_despesa.apply(
         lambda x: x.sort_values(ascending=False))
     return receita_despesa.style.applymap(color_negative_red).format(
-        {"ValorNum": lambda x: formata_real(x)}).render()
+        {"ValorNum": lambda x: formata_real(x)})
 
 
 def general_report_generation(financeira_df):
@@ -101,7 +101,7 @@ def general_report_generation(financeira_df):
         {"ValorNum": lambda x: formata_real(x)})
     relatorio_geral = relatorio_geral.format(
         {"Data": lambda x: datetime.datetime.strftime(x, '%d/%m/%Y') if (x != '') else 'Pendente'})
-    return relatorio_geral.render()
+    return relatorio_geral
 
 
 def total_profit(financeira_df):
